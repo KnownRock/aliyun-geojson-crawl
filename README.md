@@ -7,4 +7,5 @@ Data from [datav.aliyun.com](http://datav.aliyun.com/portal/school/atlas/area_se
 ```
 npm install
 npm run start
+npm run generate
 ```

@@ -1,8 +1,6 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const areaQuene = ['100000'];
-
 const sleep = ()=>{
   return new Promise(resolve => {
     setTimeout(() => {
@@ -27,6 +25,8 @@ async function getJson(adcode) {
   if(!fs.existsSync('./data')){
     fs.mkdirSync('./data');
   }
+
+  const areaQuene = ['100000'];
 
   while(areaQuene.length > 0){
     try {

@@ -4,14 +4,14 @@ const fs = require('fs')
 // add adcode as id, and add bbox for each feature
 const areaQuene = ['100000']
 
-if(!fs.existsSync('./dataForHandled')){
+if (!fs.existsSync('./dataForHandled')) {
   fs.mkdirSync('./dataForHandled')
 }
 
 while (areaQuene.length > 0) {
   const areaCode = areaQuene.shift()
-  if(fs.existsSync(`./data/${areaCode}.json`)){
-    const json = JSON.parse(fs.readFileSync(`./data/${areaCode}.json`)) 
+  if (fs.existsSync(`./data/${areaCode}.json`)) {
+    const json = JSON.parse(fs.readFileSync(`./data/${areaCode}.json`))
     json.features.forEach(feature => {
       if (feature.properties.adcode.toString().match(/00$/)) {
         areaQuene.push(feature.properties.adcode)
